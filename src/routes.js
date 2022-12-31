@@ -10,11 +10,13 @@ const routesAndMenuItems = {
   mainMenuItems: [
     {
       path: DEFAULT_PATHS.APP,
+      exact: true,
       redirect: true,
       to: `${appRoot}/dashboard`,
     },
     {
       path: DEFAULT_PATHS.LOGIN,
+      exact: true,
       redirect: true,
       to: `${appRoot}/login`,
     },
