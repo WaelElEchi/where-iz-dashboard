@@ -1,0 +1,4 @@
+/* This file is reserved for overriding and extending the template styles. */
+.image-white {
+  filter: brightness(0) invert(1);
+}
