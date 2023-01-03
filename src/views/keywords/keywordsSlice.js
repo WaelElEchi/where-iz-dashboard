@@ -63,12 +63,13 @@ export const createKeyword = (keyword) => async (dispatch) => {
     .post(`${SERVICE_URL}/keyword`, keyword)
     .then(function (res) {
       const { data: newKeyword } = res.data;
-      console.log(res.data);
       dispatch(addKeyword({ newKeyword, loading: false }));
     })
     .catch(function (error) {
       console.log(error);
     });
+
+  return response;
 
   /* // dispatch(receiveService({ keywords, pageCount, loading: false, pageIndex }));
    */
@@ -93,12 +94,16 @@ export const updateKeyword = (keyword) => async (dispatch) => {
     .catch(function (error) {
       console.log(error);
     });
+
+  return response;
 };
 export const deleteKeyword = (ids) => async (dispatch) => {
-  console.log(ids);
   const response = await axios.delete(`${SERVICE_URL}/keyword`, { data: ids }).then(function (res) {
     dispatch(deleteKeywords({ ids, loading: false }));
   });
+
+  return response;
+
   // const resIds = items.map((x) => x._id))
 
   /* const response = await axios.delete(`${SERVICE_URL}/keyword`, { sortBy, pageSize, pageIndex, ids });

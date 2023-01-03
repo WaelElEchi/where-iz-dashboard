@@ -37,7 +37,7 @@ const Main = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistedStore}>
         <Helmet {...REACT_HELMET_PROPS} />
-        <ToastContainer transition={Slide} newestOnTop />
+        <ToastContainer transition={Slide} newestOnTop autoClose="1500" />
         <Router basename={process.env.REACT_APP_BASENAME}>
           <LangProvider>
             <RouteIdentifier routes={[...layoutlessRoutes, ...defaultRoutes]} fallback={<Loading />} />

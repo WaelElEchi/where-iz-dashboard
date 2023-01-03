@@ -16,6 +16,7 @@ const authSlice = createSlice({
       state.isLogin = true;
     },
     logout(state, action) {
+      localStorage.removeItem('token');
       state.currentUser = {};
       state.isLogin = false;
     },
@@ -31,6 +32,7 @@ export const getUser = () => async (dispatch) => {
       dispatch(setCurrentUser(res.data));
     })
     .catch(function (error) {
+      dispatch(logout());
       console.log(error);
     });
 

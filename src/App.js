@@ -4,7 +4,6 @@ import React, { useMemo, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
-
 // import layout
 import Layout from 'layout/Layout';
 
@@ -16,21 +15,23 @@ import Loading from 'components/loading/Loading';
 
 import { getUser } from 'auth/authSlice';
 
-import { DEFAULT_REDIRECT_PATH } from 'config';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const { currentUser, isLogin } = useSelector((state) => state.auth);
   const history = useHistory();
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect(async () => {
     // eslint-disable-next-line
     if (localStorage.getItem('token')) {
       // eslint-disable-next-line
       //history.push(DEFAULT_REDIRECT_PATH);
-      dispatch(getUser());
+      const err = await dispatch(getUser());
+      await console.log(err);
     } else {
       history.push('/login');
+      localStorage.removeItem('token');
     }
   }, [isLogin]);
 

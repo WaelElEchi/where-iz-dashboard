@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Form } from 'react-bootstrap';
 import { useTable, useGlobalFilter, useSortBy, usePagination, useRowSelect, useRowState, useAsyncDebounce } from 'react-table';
 import HtmlHead from 'components/html-head/HtmlHead';
+import { toast } from 'react-toastify';
+
 import { createKeyword, deleteKeyword, getKeywords, updateKeyword } from './keywordsSlice';
 import ItemList from './components/ItemList';
 import ItemListPagination from './components/ItemListPagination';
-import AddEditModal from './components/AddEditModal';
+
 import ItemListHeader from './components/ItemListHeader';
 import CheckAll from './components/CheckAll';
 import SearchInput from './components/SearchInput';
@@ -102,17 +104,23 @@ const KeywordsApp = () => {
     state: { pageIndex, pageSize, sortBy },
   } = tableInstance;
 
-  const addItem = ({ item }) => {
-    dispatch(createKeyword(item));
+  const addItem = async ({ item }) => {
+    await dispatch(createKeyword(item)).then((res) => {
+      toast.success('Mot clé ajouté avec success!');
+    });
   };
 
   const editItem = ({ item }) => {
-    dispatch(updateKeyword(item));
+    dispatch(updateKeyword(item)).then((res) => {
+      toast.success('Mot clé mis à jour avec success!');
+    });
   };
 
   const deleteItem = (items) => {
     // eslint-disable-next-line
-    dispatch(deleteKeyword(items.map((x) => x._id)));
+    dispatch(deleteKeyword(items.map((x) => x._id))).then((res) => {
+      toast.success('Mot clé supprimé avec success!');
+    });
   };
 
   const searchItem = useAsyncDebounce((val) => {

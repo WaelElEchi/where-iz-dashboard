@@ -64,6 +64,7 @@ const StatsHorizontal = () => {
           </Card.Body>
         </Card>
       </Col>
+
       <Col xl="3">
         <Card className="hover-border-primary">
           <Card.Body className="py-4">
@@ -77,12 +78,13 @@ const StatsHorizontal = () => {
                 <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Réponses réussies</div>
               </Col>
               <Col xs="auto" className="ps-3">
-                <div className="display-5 text-primary">{data ? data.numberOfFails : <Spinner animation="border" variant="primary" />}</div>
+                <div className="display-5 text-primary">{data ? data.numberOfSuccess : <Spinner animation="border" variant="primary" />}</div>
               </Col>
             </Row>
           </Card.Body>
         </Card>
       </Col>
+
       <Col xl="3">
         <Card className="hover-border-primary">
           <Card.Body className="py-4">
@@ -96,7 +98,7 @@ const StatsHorizontal = () => {
                 <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Réponses échouées</div>
               </Col>
               <Col xs="auto" className="ps-3">
-                <div className="display-5 text-primary">{data ? data.numberOfSuccess : <Spinner animation="border" variant="primary" />}</div>
+                <div className="display-5 text-primary">{data ? data.numberOfFails : <Spinner animation="border" variant="primary" />}</div>
               </Col>
             </Row>
           </Card.Body>
