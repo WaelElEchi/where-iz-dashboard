@@ -3,7 +3,9 @@ import { LAYOUT, MENU_BEHAVIOUR, NAV_COLOR, MENU_PLACEMENT, RADIUS, THEME_COLOR,
 export const IS_DEMO = false;
 export const IS_AUTH_GUARD_ACTIVE = true;
 // export const SERVICE_URL = 'https://where-iz-api-v3.onrender.com/api/v1';
-export const SERVICE_URL = 'http://35.180.196.133:5000/api/v1';
+//export const SERVICE_URL = 'http://35.180.196.133:5000/api/v1';
+
+export const SERVICE_URL = 'https://where-iz-api-v3.onrender.com/api/v1';
 
 export const USE_MULTI_LANGUAGE = false;
 export const AUTH_TOKEN = 'token';
