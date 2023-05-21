@@ -29,7 +29,6 @@ import routesAndMenuItems from 'routes.js';
 import { Slide, ToastContainer } from 'react-toastify';
 
 // mock server register for demo
-import '@mock-api';
 
 const Main = () => {
   const layoutlessRoutes = useMemo(() => getLayoutlessRoutes({ data: routesAndMenuItems }), []);
