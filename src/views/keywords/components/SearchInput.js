@@ -17,7 +17,7 @@ const SearchInput = ({ tableInstance, onChange }) => {
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder="Recherche"
+        placeholder="Search"
       />
       {value && value.length > 0 ? (
         <span

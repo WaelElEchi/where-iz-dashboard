@@ -22,19 +22,19 @@ const routesAndMenuItems = {
     },
     {
       path: `${appRoot}/dashboard`,
-      label: 'Tableau De Bord',
+      label: 'Dashboard',
       icon: 'chart-2',
       component: Dashboard,
     },
     {
       path: `${appRoot}/keywords`,
-      label: 'Mots Clés',
+      label: 'Keywords',
       icon: 'shop',
       component: Keywords,
     },
     {
       path: `${appRoot}/settings`,
-      label: 'Paramétres',
+      label: 'Settings',
       icon: 'gear',
       component: Settings,
     },

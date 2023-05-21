@@ -36,7 +36,7 @@ const StatsHorizontal = () => {
                 </div>
               </Col>
               <Col>
-                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Total de requêtes reçues</div>
+                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Total number of received requests</div>
               </Col>
               <Col xs="auto" className="ps-3">
                 <div className="display-5 text-primary">{data ? data.totalRequestsNumber : <Spinner animation="border" variant="primary" />}</div>
@@ -55,7 +55,7 @@ const StatsHorizontal = () => {
                 </div>
               </Col>
               <Col>
-                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Requêtes faites aujourd'hui</div>
+                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Requests received today</div>
               </Col>
               <Col xs="auto" className="ps-3">
                 <div className="display-5 text-primary">{data ? data.requestsToday : <Spinner animation="border" variant="primary" />}</div>
@@ -75,7 +75,7 @@ const StatsHorizontal = () => {
                 </div>
               </Col>
               <Col>
-                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Réponses réussies</div>
+                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Successful responses</div>
               </Col>
               <Col xs="auto" className="ps-3">
                 <div className="display-5 text-primary">{data ? data.numberOfSuccess : <Spinner animation="border" variant="primary" />}</div>
@@ -95,7 +95,7 @@ const StatsHorizontal = () => {
                 </div>
               </Col>
               <Col>
-                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Réponses échouées</div>
+                <div className="heading mb-0 sh-8 d-flex align-items-center lh-1-25 ps-3">Failed responses</div>
               </Col>
               <Col xs="auto" className="ps-3">
                 <div className="display-5 text-primary">{data ? data.numberOfFails : <Spinner animation="border" variant="primary" />}</div>

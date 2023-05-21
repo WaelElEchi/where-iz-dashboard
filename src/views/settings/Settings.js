@@ -5,7 +5,7 @@ import HtmlHead from 'components/html-head/HtmlHead';
 import CsLineIcons from 'cs-line-icons/CsLineIcons';
 
 const AccountSettings = () => {
-  const title = 'Paramétres';
+  const title = 'Settings';
 
   const languageOptions = [
     { value: 'Français', label: 'Français' },
@@ -32,21 +32,21 @@ const AccountSettings = () => {
           <Card.Body>
             <Form className="d-flex flex-column">
               <div className="mb-3">
-                <Form.Label>Réponse par defaut</Form.Label>
-                <Form.Control type="text" defaultValue="Bonjour, le {produit} demandé est situé dans {localisation}" />
+                <Form.Label>Defaut response</Form.Label>
+                <Form.Control type="text" defaultValue="Hey, you can find this {product} in {localisation}" />
               </div>
               <div className="mb-3">
-                <Form.Label>Réponse d'échec par défaut</Form.Label>
-                <Form.Control type="text" defaultValue="Mot clé non reconnu, veuillez réessayer" />
+                <Form.Label>Default failure response</Form.Label>
+                <Form.Control type="text" defaultValue="I'm sorry, but we currently do not offer this particular product in our inventory." />
               </div>
             </Form>
-            <Button variant="primary">Sauvegarder</Button>
+            <Button variant="primary">Submit</Button>
           </Card.Body>
         </Card>
         {/* Language Settings End */}
 
         {/* Language Settings Start */}
-        <h2 className="small-title ">Paramètres de langue</h2>
+        <h2 className="small-title ">Language settings</h2>
         <Card>
           <Card.Body>
             <Form className="d-flex flex-column">
@@ -55,7 +55,7 @@ const AccountSettings = () => {
                 <Select classNamePrefix="react-select" options={languageOptions} value={languageValue} onChange={setLanguageValue} placeholder="Select" />
               </div>
             </Form>
-            <Button variant="primary">Sauvegarder</Button>
+            <Button variant="primary">Submit</Button>
           </Card.Body>
         </Card>
         {/* Language Settings End */}

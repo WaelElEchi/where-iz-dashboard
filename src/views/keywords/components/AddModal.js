@@ -50,7 +50,7 @@ const AddModal = ({ tableInstance, addItem }) => {
       <Modal className="modal-center" show={isOpenAddModal} onHide={() => setIsOpenAddModal(false)} centered>
         <CloseButton className="position-absolute e-2 t-2 z-index-1" onClick={() => setIsOpenAddModal(false)} />
         <Modal.Header>
-          <Modal.Title>Ajouter un mot clé</Modal.Title>
+          <Modal.Title>Add keyword</Modal.Title>
         </Modal.Header>
 
         <Modal.Body className="d-flex flex-column">
@@ -59,20 +59,14 @@ const AddModal = ({ tableInstance, addItem }) => {
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="key" />
                 <Form.Group className="position-relative tooltip-end-top" controlId="validationStandard01">
-                  <Form.Control required type="text" placeholder="Mot clé" defaultValue={selectedItem ? selectedItem.label : ''} onChange={changeName} />
-                  <Form.Control.Feedback type="invalid">Veuillez définir le label du mot clé.</Form.Control.Feedback>
+                  <Form.Control required type="text" placeholder="Keyword" defaultValue={selectedItem ? selectedItem.label : ''} onChange={changeName} />
+                  <Form.Control.Feedback type="invalid">Keyword is required.</Form.Control.Feedback>
                 </Form.Group>
               </div>
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="pin" />
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Localisation"
-                  defaultValue={selectedItem ? selectedItem.location : ''}
-                  onChange={changeLocation}
-                />
-                <Form.Control.Feedback type="invalid">Veuillez définir la localisation relative au mot clé.</Form.Control.Feedback>
+                <Form.Control required type="text" placeholder="Location" defaultValue={selectedItem ? selectedItem.location : ''} onChange={changeLocation} />
+                <Form.Control.Feedback type="invalid">Location is required.</Form.Control.Feedback>
               </div>
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="news" />
@@ -81,7 +75,7 @@ const AddModal = ({ tableInstance, addItem }) => {
             </>
             <Modal.Footer className="border-0 flex justify-content-center">
               <Button type="submit" className="btn-icon btn-icon-end" onClick={saveItem}>
-                <span>Ajouter</span> <CsLineIcons icon="plus" />
+                <span>Add</span> <CsLineIcons icon="plus" />
               </Button>
             </Modal.Footer>
           </Form>

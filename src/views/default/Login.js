@@ -92,19 +92,23 @@ const Login = () => {
   );
 
   const rightSide = (
-    <div className="sw-lg-70 min-h-100 bg-foreground d-flex justify-content-center align-items-center shadow-deep py-5 full-page-content-right-border">
+    <div className="sw-lg-70 min-h-100 min-w-100 bg-foreground d-flex justify-content-center align-items-center shadow-deep py-5 full-page-content-right-border">
       <div className="sw-lg-50 px-5">
-        <div className="sh-11">
+        <div className="d-flex justify-content-center padding-bottom-20">
           <NavLink to="/login">
-            <div className="logo">
+            <div className="">
               {/* <h2 style={{ color: '#1ea8e7', fontSize: '36px' }}>Where'iz</h2>{' '} */}
-              <img style={{ maxHeight: '50px' }} src="/img/logo/logo-white.png" alt="where'iz" />
+              <img
+                style={{ maxHeight: '50px', alignItems: 'center', justifyContent: 'center', justifyItems: 'center' }}
+                src="/img/logo/logoDefault.png"
+                alt="where'iz"
+              />
             </div>
           </NavLink>
         </div>
         <div className="mb-5">
-          <h2 className="cta-1 mb-0 text-primary">Bienvenu,</h2>
-          <h2 className="cta-1 text-primary">Connectez vous en tant qu'administrateur</h2>
+          {/* <h1 className="cta-1 mb-0 text-primary text-center font-weight-bold">Login</h1> */}
+          {/* <h2 className="cta-1 text-primary">Connectez vous en tant qu'administrateur</h2> */}
         </div>
 
         <div>
@@ -138,7 +142,7 @@ const Login = () => {
             </div>
             {errorMsg && <div style={{ color: 'red', fontSize: '12px' }}>{errorMsg}</div>}
             <Button size="lg" type="submit">
-              {isLoading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : 'Se Connecter'}
+              {isLoading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : 'Login'}
             </Button>
           </form>
         </div>

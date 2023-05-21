@@ -53,7 +53,7 @@ const EditModal = ({ tableInstance, editItem }) => {
       <Modal className="modal-center" show={isOpenAddEditModal} onHide={() => setIsOpenAddEditModal(false)} centered>
         <CloseButton className="position-absolute e-2 t-2 z-index-1" onClick={() => setIsOpenAddEditModal(false)} />
         <Modal.Header>
-          <Modal.Title> Modifier ce mot clé</Modal.Title>
+          <Modal.Title> Update keyword</Modal.Title>
         </Modal.Header>
 
         <Modal.Body className="d-flex flex-column">
@@ -62,20 +62,14 @@ const EditModal = ({ tableInstance, editItem }) => {
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="key" />
                 <Form.Group className="position-relative tooltip-end-top" controlId="validationStandard01">
-                  <Form.Control required type="text" placeholder="Mot clé" defaultValue={selectedItem ? selectedItem.label : ''} onChange={changeName} />
-                  <Form.Control.Feedback type="invalid">Veuillez définir le label du mot clé.</Form.Control.Feedback>
+                  <Form.Control required type="text" placeholder="Keyword" defaultValue={selectedItem ? selectedItem.label : ''} onChange={changeName} />
+                  <Form.Control.Feedback type="invalid">Keyword is required.</Form.Control.Feedback>
                 </Form.Group>
               </div>
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="pin" />
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Localisation"
-                  defaultValue={selectedItem ? selectedItem.location : ''}
-                  onChange={changeLocation}
-                />
-                <Form.Control.Feedback type="invalid">Veuillez définir la localisation relative au mot clé.</Form.Control.Feedback>
+                <Form.Control required type="text" placeholder="Location" defaultValue={selectedItem ? selectedItem.location : ''} onChange={changeLocation} />
+                <Form.Control.Feedback type="invalid">Location is required.</Form.Control.Feedback>
               </div>
               <div className="mb-3 filled w-100 d-flex flex-column">
                 <CsLineIcons icon="news" />
@@ -90,7 +84,7 @@ const EditModal = ({ tableInstance, editItem }) => {
               </OverlayTrigger>
 
               <Button type="submit" className="btn-icon btn-icon-end">
-                <span>Sauvegarder</span> <CsLineIcons icon="check" />
+                <span>Submit</span> <CsLineIcons icon="check" />
               </Button>
             </Modal.Footer>
           </Form>

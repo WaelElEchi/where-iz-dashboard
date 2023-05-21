@@ -25,7 +25,7 @@ const KeywordsApp = () => {
   const columns = React.useMemo(() => {
     return [
       {
-        Header: 'Mot clé',
+        Header: 'Keyword',
         accessor: 'name',
         sortable: true,
         headerClassName: 'ol-3 col-lg-4 d-flex flex-column mb-lg-0 pe-3 d-flex',
@@ -50,7 +50,7 @@ const KeywordsApp = () => {
         headerClassName: 'col-3 col-lg-3 d-flex flex-column pe-1 justify-content-center',
       },
       {
-        Header: 'Information',
+        Header: 'Informations',
         accessor: 'information',
         sortable: true,
         headerClassName: 'col-3 col-lg-3 d-flex flex-column pe-1 justify-content-center',
@@ -106,13 +106,13 @@ const KeywordsApp = () => {
 
   const addItem = async ({ item }) => {
     await dispatch(createKeyword(item)).then((res) => {
-      toast.success('Mot clé ajouté avec success!');
+      toast.success('Keyword successfully added !');
     });
   };
 
   const editItem = ({ item }) => {
     dispatch(updateKeyword(item)).then((res) => {
-      toast.success('Mot clé mis à jour avec success!');
+      toast.success('Keyword successfully updated !');
     });
   };
 
