@@ -19,7 +19,7 @@ import AddModal from './components/AddModal';
 import EditModal from './components/EditModal';
 
 const KeywordsApp = () => {
-  const title = 'Mots Clés';
+  const title = 'Keywords';
   const description = 'User directory application that built with the help of List.js. Can be searched, paged and sorted.';
 
   const columns = React.useMemo(() => {
@@ -106,20 +106,20 @@ const KeywordsApp = () => {
 
   const addItem = async ({ item }) => {
     await dispatch(createKeyword(item)).then((res) => {
-      toast.success('Keyword successfully added !');
+      toast.success('Keyword successfully added!');
     });
   };
 
   const editItem = ({ item }) => {
     dispatch(updateKeyword(item)).then((res) => {
-      toast.success('Keyword successfully updated !');
+      toast.success('Keyword successfully updated!');
     });
   };
 
   const deleteItem = (items) => {
     // eslint-disable-next-line
     dispatch(deleteKeyword(items.map((x) => x._id))).then((res) => {
-      toast.success('Mot clé supprimé avec success!');
+      toast.success('Keyword successfully deleted!');
     });
   };
 
